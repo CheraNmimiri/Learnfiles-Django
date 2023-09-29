@@ -1,0 +1,20 @@
+{% extends 'main/main.html' %}
+{% block title %}
+{{super}} index
+{% endblock %}
+{% block body %}
+<h1>Show all post list</h1>
+<ul>
+    {% for posts in all_post %}
+        <li><a href ="/hello-world/{{posts.id}}" id="ch_col"> {{posts.username}} </a> </li>
+        {% if posts.username == "ali" %}
+            <script>
+                document.getElementById("ch_col").style.color = "green";
+                document.getElementById("ch_col").style.fontSize = "32px";
+
+            </script>
+        {% endif %}
+    {% endfor %}
+
+</ul>
+{%  endblock %}
